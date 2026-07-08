@@ -1,0 +1,10 @@
+=== EVALUACIJA MODELA ===
+Matrica konfuzije:
+[[11532   903]
+ [ 1462  2384]]
+
+Accuracy:  0.8547
+Precision: 0.7253
+Recall:    0.6199
+F1-score:  0.6684
+ROC-AUC:   0.9022
