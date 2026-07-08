@@ -1,4 +1,17 @@
-=== EVALUACIJA MODELA ===
+=== EVALUACIJA I POREĐENJE MODELA ===
+
+--- Logistic Regression ---
+Matrica konfuzije:
+[[11717   718]
+ [ 2127  1719]]
+
+Accuracy:  0.8253
+Precision: 0.7054
+Recall:    0.4470
+F1-score:  0.5472
+ROC-AUC:   0.8516
+
+--- Random Forest ---
 Matrica konfuzije:
 [[11532   903]
  [ 1462  2384]]
@@ -8,3 +21,6 @@ Precision: 0.7253
 Recall:    0.6199
 F1-score:  0.6684
 ROC-AUC:   0.9022
+
+=== ZAKLJUČAK ===
+Model sa boljim F1-skorom (balans preciznosti i odziva): Random Forest

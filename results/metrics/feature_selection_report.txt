@@ -1,0 +1,53 @@
+=== ODABIR NAJZNAČAJNIJIH ATRIBUTA (WRAPPER METODA - RFE) ===
+
+Metodologija: Recursive Feature Elimination (RFE) je wrapper metoda odabira atributa.
+Za razliku od filter metoda (koje gledaju samo statističku vezu atributa i cilja,
+npr. korelaciju) ili embedded metoda (gde se značajnost čita direktno iz jednog već
+istreniranog modela), RFE iterativno trenira model, uklanja atribut sa najmanjim
+doprinosom, pa trenira ponovo - sve dok ne ostane željeni broj atributa. Ovo je
+skuplje računski (model se trenira više puta), ali odabir je direktno vođen
+stvarnim uticajem atributa na performanse modela.
+Vreme izvršavanja RFE-a: 10.9s (estimator: RandomForestClassifier, n_estimators=50)
+
+Ukupan broj atributa u punom modelu: 13
+Odabrano top 6 atributa (RFE, estimator=RandomForest):
+  - age
+  - education-num
+  - occupation
+  - relationship
+  - capital-gain
+  - hours-per-week
+
+Kompletno rangiranje svih atributa po RFE eliminaciji (1 = ostao u top 6, veći broj = ranije eliminisan):
+  1. age
+  1. education-num
+  1. relationship
+  1. occupation
+  1. hours-per-week
+  1. capital-gain
+  2. marital-status
+  3. workclass
+  4. capital-loss
+  5. education
+  6. native-country
+  7. race
+  8. sex
+
+=== POREĐENJE PERFORMANSI ===
+
+--- RF - svi atributi (13) ---
+Accuracy:  0.8547
+Precision: 0.7253
+Recall:    0.6199
+F1-score:  0.6684
+ROC-AUC:   0.9022
+
+--- RF - top 6 atributa ---
+Accuracy:  0.8416
+Precision: 0.6890
+Recall:    0.6004
+F1-score:  0.6417
+ROC-AUC:   0.8879
+
+=== ZAKLJUČAK ===
+Pun model je bolji za 0.0268 F1-poena. Preostali atributi i dalje nose korisnu prediktivnu informaciju, pa uklanjanje nije opravdano ako je prioritet maksimalna tačnost, ali redukovani model ostaje razumna opcija ako je interpretabilnost ili brzina važnija od poslednjeg procenta performansi.

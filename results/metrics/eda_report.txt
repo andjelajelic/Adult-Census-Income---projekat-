@@ -1,0 +1,32 @@
+=== EKSPLORATIVNA ANALIZA (EDA) - Adult Census Income ===
+
+Ukupan broj redova (train + test, nakon uklanjanja tekstualnog šuma): 48842
+
+=== NEDOSTAJUĆE VREDNOSTI ===
+  workclass: 2799 (5.73%)
+  occupation: 2809 (5.75%)
+  native-country: 857 (1.75%)
+
+=== OSNOVNE STATISTIKE NUMERIČKIH ATRIBUTA ===
+            age      fnlwgt  education-num  capital-gain  capital-loss  hours-per-week
+count  48842.00    48842.00       48842.00      48842.00       48842.0        48842.00
+mean      38.64   189664.13          10.08       1079.07          87.5           40.42
+std       13.71   105604.03           2.57       7452.02         403.0           12.39
+min       17.00    12285.00           1.00          0.00           0.0            1.00
+25%       28.00   117550.50           9.00          0.00           0.0           40.00
+50%       37.00   178144.50          10.00          0.00           0.0           40.00
+75%       48.00   237642.00          12.00          0.00           0.0           45.00
+max       90.00  1490400.00          16.00      99999.00        4356.0           99.00
+
+=== POTENCIJALNE ANOMALIJE (na osnovu domenskog znanja) ===
+  capital-gain: 91.7% redova ima vrednost 0 (izrazito retke nenulte vrednosti - očekivano za ovu vrstu atributa)
+  capital-loss: 95.3% redova ima vrednost 0 (izrazito retke nenulte vrednosti - očekivano za ovu vrstu atributa)
+  hours-per-week: 223 redova sa < 5h nedeljno, 318 redova sa > 80h nedeljno (proveriti da li su realni podaci ili greška unosa)
+  age: opseg 17-90 godina
+  fnlwgt: opseg 12285-1490400 - vrlo širok raspon potvrđuje da je ovo statistički ponder bez direktne prediktivne vrednosti -> uklonjen u preprocesiranju
+
+=== SAČUVANI GRAFICI ===
+ - correlation_heatmap.png
+ - numeric_outliers_boxplots.png
+ - income_distribution.png
+ - income_relationships.png
