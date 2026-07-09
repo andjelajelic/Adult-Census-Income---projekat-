@@ -7,7 +7,7 @@ istreniranog modela), RFE iterativno trenira model, uklanja atribut sa najmanjim
 doprinosom, pa trenira ponovo - sve dok ne ostane željeni broj atributa. Ovo je
 skuplje računski (model se trenira više puta), ali odabir je direktno vođen
 stvarnim uticajem atributa na performanse modela.
-Vreme izvršavanja RFE-a: 10.9s (estimator: RandomForestClassifier, n_estimators=50)
+Vreme izvršavanja RFE-a: 7.8s (estimator: RandomForestClassifier, n_estimators=50)
 
 Ukupan broj atributa u punom modelu: 13
 Odabrano top 6 atributa (RFE, estimator=RandomForest):
